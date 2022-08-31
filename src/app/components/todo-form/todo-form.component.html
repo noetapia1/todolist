@@ -1,0 +1,5 @@
+<form (ngSubmit)="submitButton()">
+    <label for="taskName">Enter a new task:</label>
+    <input name="taskName" id="taskName" [(ngModel)]="newTask"/>
+    <button type="submit">Add</button>
+</form>

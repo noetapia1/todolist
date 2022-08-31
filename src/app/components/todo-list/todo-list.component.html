@@ -1,0 +1,13 @@
+<p>To-Do List</p>
+<p>A place to store your todos</p>
+<p>Filter your todos -TDB</p> 
+
+<table>
+    <tr *ngFor="let todoItem of todoList; let i = index">
+        <app-todo-item [todo]="todoItem" (taskCompleted)="completeTask(todoItem)" (removeTask)="deleteTask(index)"></app-todo-item>
+    </tr>
+</table>
+
+<app-todo-form (addTask)="addTaskToList($event)"></app-todo-form>
+<!-- this needs to be  -->
+<!-- <input>Add to your todo</input> -->
