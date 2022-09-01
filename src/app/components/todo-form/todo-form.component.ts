@@ -22,7 +22,6 @@ export class TodoFormComponent implements OnInit {
     this.newTask="";
   }
 
-
   ngOnInit() {
   }
 

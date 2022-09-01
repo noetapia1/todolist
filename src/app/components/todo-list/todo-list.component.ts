@@ -12,9 +12,7 @@ export class TodoListComponent implements OnInit {
   todoList:Todo[]=[
     {task: "laundry", completed: true},
     {task: "folding clothes", completed: false},
-    {task: "dinner", completed: false},
-    {task: "shopping groceries", completed: false},
-    {task: "take out trash", completed: true},
+    {task: "dinner", completed: true},
     {task: "homework", completed: false},
     {task: "laboratory", completed: false},
     {task: "gym", completed: false},
@@ -22,6 +20,16 @@ export class TodoListComponent implements OnInit {
     {task: "cleaning", completed: false}
   ];
 
+  hasPendingTasks():boolean{
+    let hasPendingTask=false;
+    for (let todo of this.todoList){
+      if(!todo.completed){
+        hasPendingTask=true;
+        break;
+      }
+    };
+    return hasPendingTask;
+  }
 
   ngOnInit() {
   }

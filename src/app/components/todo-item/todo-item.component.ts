@@ -23,6 +23,13 @@ export class TodoItemComponent implements OnInit {
     this.removeTask.emit();
   }
 
+  completeButtonStyle:object ={
+    'color': '#ff69b4',
+    'border': '1px solid #ff69b4',
+    'background':'white',
+    'border-radius': '12px'
+  }
+
   ngOnInit() {
   }
 
