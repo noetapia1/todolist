@@ -17,9 +17,11 @@ export class TodoFormComponent implements OnInit {
   @Output() addTask:EventEmitter<Todo> = new EventEmitter<Todo>();
 
   submitButton():void{
-    this.todo={task:this.newTask, completed:false};
-    this.addTask.emit(this.todo);
-    this.newTask="";
+    if(this.newTask != ""){
+      this.todo={task:this.newTask, completed:false};
+      this.addTask.emit(this.todo);
+      this.newTask="";
+    }
   }
 
   ngOnInit() {

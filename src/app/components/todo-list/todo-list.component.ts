@@ -8,6 +8,8 @@ import { Todo } from '../../Todo'
 })
 export class TodoListComponent implements OnInit {
 
+  filterInTS:string="";
+
   constructor() { }
   todoList:Todo[]=[
     {task: "laundry", completed: true},
@@ -44,6 +46,14 @@ export class TodoListComponent implements OnInit {
 
   addTaskToList(todo: Todo):void{
     this.todoList.push(todo);
+  }
+
+  showTask(task:string):boolean{
+    console.log(this.filterInTS);
+    if(this.filterInTS ==="" || task.includes(this.filterInTS)){
+      return true;
+    }
+    return false;
   }
 
 }

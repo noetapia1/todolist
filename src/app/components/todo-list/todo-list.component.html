@@ -1,11 +1,11 @@
 <p [ngStyle]="{'font-size':'24px', 'font-style':'bold'}">To-Do List</p>
 <p [ngStyle]="{'font-size':'12px'}">A place to store your todos</p>
 <br/>
-<input [ngStyle]="{'width':'98%'}" placeholder="Filter your to-dos"/><br/>
+<input [ngStyle]="{'width':'98%'}" id="filterString" [(ngModel)]="filterInTS" placeholder="Filter your to-dos"/><br/>
 
 <table>
     <tr *ngFor="let todoItem of todoList; let i = index">
-            <app-todo-item [todo]="todoItem" (taskCompleted)="completeTask(todoItem)" (removeTask)="deleteTask(i)"></app-todo-item>
+            <app-todo-item *ngIf="showTask(todoItem.task)" [todo]="todoItem" (taskCompleted)="completeTask(todoItem)" (removeTask)="deleteTask(i)"></app-todo-item>
     </tr>
 </table>
 <p *ngIf="!hasPendingTasks()">Congratulations no to-dos! Enjoy your day</p>
