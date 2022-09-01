@@ -1,4 +1,4 @@
 <td><button [ngStyle]="completeButtonStyle" *ngIf="!todo.completed" (click)="completeTaskButton()" >Complete</button></td>
-<td>{{todo.task}}</td>
+<td [ngClass]="todo.completed ? 'completed' : 'incomplete'">{{todo.task}}</td>
 <td [ngStyle]="{'float':'right'}"><button (click)="xButton()" [ngClass]="'alignRight'">X</button></td>
 

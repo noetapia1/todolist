@@ -3,3 +3,12 @@
     border: none;
     font-size: large;
 }
+
+.completed{
+    text-decoration: line-through;
+    text-decoration-color: red ;
+}
+
+.incomplete{
+    text-decoration: none;
+}
